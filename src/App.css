@@ -1,0 +1,454 @@
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #1e293b, #0f172a);
+  color: #ffffff;
+  font-size: 14px;
+}
+
+@media (min-width: 640px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+}
+
+span {
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+.button {
+  padding: 16px 32px;
+  margin: 0 auto;
+  border-radius: 6px;
+  border: 2px solid #60a5fa;
+  background-color: #0f172a;
+  color: white;
+  font-weight: 500;
+  transition: all 200ms ease;
+  box-shadow: 3px 3px 0 0 #60a5fa;
+}
+
+.button:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 0 #60a5fa;
+}
+
+/* ============================================
+   APP LAYOUT
+   ============================================ */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to right, #1e293b, #0f172a);
+  color: white;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.hero__heading-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero__title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: clamp(32px, 8vw, 112px);
+  line-height: 1;
+}
+
+.hero__accent {
+  color: #60a5fa;
+}
+
+.hero__description {
+  font-size: clamp(12px, 1vw, 16px);
+  font-weight: 300;
+}
+
+.hero__description-accent {
+  color: #60a5fa;
+  font-weight: 500;
+}
+
+/* ============================================
+   SECTION WRAPPER
+   ============================================ */
+.section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.section__header {
+  background-color: #0f172a;
+  padding: 40px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__header-label {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.section__title {
+  font-weight: 600;
+  font-size: clamp(24px, 6vw, 96px);
+  line-height: 1.2;
+}
+
+.section__title-accent {
+  text-transform: uppercase;
+  color: #60a5fa;
+}
+
+.section__content {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 40px;
+  padding: 16px;
+}
+
+/* ============================================
+   GENERATOR HEADER
+   ============================================ */
+.generator__header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.generator__header-number {
+  font-size: clamp(24px, 4vw, 48px);
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.generator__header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.generator__header-title {
+  font-size: clamp(16px, 2vw, 32px);
+  font-weight: 600;
+}
+
+.generator__header-description {
+  font-size: clamp(12px, 1vw, 16px);
+  margin: 0 auto;
+}
+
+/* ============================================
+   GENERATOR GRID BUTTONS
+   ============================================ */
+.generator__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+}
+
+.generator__grid-button {
+  background-color: #0f172a;
+  border: 1.5px solid #60a5fa;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 200ms ease;
+  color: white;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.generator__grid-button:hover {
+  border-color: #2563eb;
+}
+
+.generator__grid-button--active {
+  border-color: #2563eb;
+}
+
+/* ============================================
+   MUSCLE SELECTOR
+   ============================================ */
+.muscle-selector {
+  background-color: #0f172a;
+  border: 1.5px solid #60a5fa;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.muscle-selector__button {
+  position: relative;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.muscle-selector__icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.muscle-selector__dropdown {
+  display: flex;
+  flex-direction: column;
+  padding: 0 12px 12px 12px;
+  gap: 8px;
+}
+
+.muscle-selector__option {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  padding: 8px 0;
+  transition: color 200ms ease;
+  text-transform: uppercase;
+}
+
+.muscle-selector__option:hover {
+  color: #60a5fa;
+}
+
+.muscle-selector__option--active {
+  color: #60a5fa;
+}
+
+/* ============================================
+   GENERATOR GOALS GRID
+   ============================================ */
+.goals__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.goals__button {
+  background-color: #0f172a;
+  border: 1.5px solid #60a5fa;
+  padding: 12px 16px;
+  border-radius: 8px;
+  transition: all 200ms ease;
+  cursor: pointer;
+  color: white;
+  text-transform: capitalize;
+}
+
+.goals__button:hover {
+  border-color: #2563eb;
+}
+
+.goals__button--active {
+  border-color: #2563eb;
+}
+
+/* ============================================
+   WORKOUT SECTION
+   ============================================ */
+.workout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ============================================
+   EXERCISE CARD
+   ============================================ */
+.exercise-card {
+  padding: 16px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #0f172a;
+}
+
+.exercise-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exercise-card__title-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.exercise-card__number {
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.exercise-card__name {
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  font-size: clamp(16px, 2vw, 24px);
+  flex: 1;
+}
+
+.exercise-card__type {
+  font-size: 12px;
+  color: #94a3b8;
+  text-transform: capitalize;
+}
+
+.exercise-card__muscles {
+  display: flex;
+  flex-direction: column;
+}
+
+.exercise-card__muscles-label {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.exercise-card__muscles-value {
+  text-transform: capitalize;
+}
+
+.exercise-card__description {
+  display: flex;
+  flex-direction: column;
+  background-color: #0f172a;
+  border-radius: 6px;
+  gap: 8px;
+}
+
+.exercise-card__description-text {
+  font-size: 12px;
+}
+
+.exercise-card__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+}
+
+.exercise-card__stat {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1.5px solid #1e293b;
+}
+
+.exercise-card__stat-label {
+  color: #94a3b8;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.exercise-card__stat-value {
+  font-weight: 500;
+}
+
+.exercise-card__sets-button {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1.5px solid #1e3a8a;
+  background-color: #0f172a;
+  color: white;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.exercise-card__sets-button:hover {
+  border-color: #2563eb;
+}
+
+.exercise-card__sets-label {
+  color: #94a3b8;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.exercise-card__sets-value {
+  font-weight: 500;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (min-width: 640px) {
+  .exercise-card__number {
+    display: block;
+  }
+
+  .exercise-card__title-wrapper {
+    justify-content: flex-start;
+  }
+}
